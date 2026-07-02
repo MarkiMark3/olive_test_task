@@ -14,7 +14,6 @@ const TARGET_URL =
 const OUTPUT_FILE = path.join(__dirname, "..", "output", "product.json");
 
 async function scrape() {
-  console.log("Launching stealth browser...");
   const browser = await chromium.launch({
     headless: false,
     args: ["--start-maximized"],
@@ -24,7 +23,6 @@ async function scrape() {
   });
   const page = await context.newPage();
 
-  console.log("Navigating to MSI product page...");
   await page.goto(TARGET_URL, { waitUntil: "load", timeout: 60000 });
 
   await page.waitForSelector("h2.crop-text-2.title", { timeout: 15000 });
@@ -144,7 +142,6 @@ async function scrape() {
   fs.mkdirSync(path.dirname(OUTPUT_FILE), { recursive: true });
   fs.writeFileSync(OUTPUT_FILE, JSON.stringify(data, null, 2), "utf-8");
 
-  console.log("Extraction complete!");
   console.log(JSON.stringify(data, null, 2));
 
   await browser.close();
