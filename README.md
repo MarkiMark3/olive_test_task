@@ -16,14 +16,4 @@ npm run scrape
 ```
 
 
-## Project structure
-
-```
-msi-product-scraper/
-  package.json
-  src/
-    scrape.js     
-  output/
-    product.json   # generated on each scrape
-```
 
