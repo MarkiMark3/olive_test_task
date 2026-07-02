@@ -1,0 +1,22 @@
+{
+  "name": "msi-product-scraper",
+  "version": "1.0.0",
+  "description": "Playwright scraper for a single MSI-US Official Store product detail page.",
+  "main": "src/scrape.js",
+  "type": "module",
+  "scripts": {
+    "scrape": "node src/scrape.js",
+    "postinstall": "echo 'Run: npx playwright install chromium'"
+  },
+  "keywords": [
+    "playwright",
+    "scraper",
+    "msi"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "playwright": "^1.47.0",
+    "playwright-extra": "^4.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2"
+  }
+}
